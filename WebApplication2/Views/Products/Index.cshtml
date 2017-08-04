@@ -13,6 +13,7 @@
             <li>@Html.DisplayFor(modelItem => listItem.Name)</li>
             <li>@Html.DisplayFor(modelItem => listItem.Cost)</li>
             <li>@Html.DisplayFor(modelItem => listItem.Country)</li>
+            @Html.ActionLink("Details", "Details", new { id = listItem.ProductId })
         }
     </ul>
 </body>
