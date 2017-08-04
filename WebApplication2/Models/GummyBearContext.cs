@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore; 
 
 namespace GummyBear.Models
 {
-    public class ToDoListContext : DbContext
+    public class GummyBearContext : DbContext
     {
         public virtual DbSet<Product> Products { get; set; }
 
