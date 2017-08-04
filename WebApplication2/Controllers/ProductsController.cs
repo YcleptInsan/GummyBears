@@ -16,10 +16,24 @@ namespace GummyBear.Controllers
         {
             return View(db.Products.ToList());
         }
+
         public IActionResult Details(int id)
         {
             var thisItem = db.Products.FirstOrDefault(items => items.ProductId == id);
             return View(thisItem);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Product item)
+        {
+            db.Products.Add(item);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
