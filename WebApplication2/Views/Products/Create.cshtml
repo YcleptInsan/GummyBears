@@ -11,7 +11,7 @@
 <body>
     <h2>Create</h2>
     <hr />
-    <h4>Add a new task</h4>
+    <h4>Add a new item</h4>
     @using (Html.BeginForm())
     {
         @Html.LabelFor(model => model.Name)
@@ -20,7 +20,7 @@
         @Html.TextBoxFor(model => model.Cost)
         @Html.LabelFor(model => model.Country)
         @Html.TextBoxFor(model => model.Country)
-        <input type="submit" value="Add new task" />
+        <input type="submit" value="Add new item" />
     }
     <p>@Html.ActionLink("Back to list", "Index")</p>
 </body>

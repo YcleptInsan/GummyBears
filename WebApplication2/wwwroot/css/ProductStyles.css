@@ -1,0 +1,20 @@
+﻿#product-header {
+    color: black; 
+    font-family: Georgia;
+}
+.product-list {
+    font-family: 'Nirmala UI';
+    font-size: larger;
+   
+}
+#Details {
+    color: white;
+}
+
+#Edit {
+    color: white;
+}
+
+#Delete {
+    color: white;
+}

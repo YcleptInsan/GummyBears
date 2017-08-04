@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" type="text/css" href="~/css/ProductStyles.css" />
 
 @model IEnumerable<GummyBear.Models.Product>
 
@@ -9,14 +10,29 @@
     <title>Gumnmy Bear Mania</title>
 </head>
 <body>
-    <h2>To Do List</h2>
-    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <h2 id="product-header">Products:</h2>
     <ul>
         @foreach (var listItem in Model)
         {
-            <li>@Html.DisplayFor(modelItem => listItem.Name) | @Html.ActionLink("Details", "Details", new { id = listItem.ProductId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.ProductId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.ProductId })</li>
+        <li class="product-list">
+                @Html.DisplayFor(modelItem => listItem.Name) |
+
+            <div class="btn btn-info" id="Details">
+                @Html.ActionLink("Details", "Details", new { id = listItem.ProductId })
+            </div> |
+
+            <div class="btn btn-warning" id="Edit">
+                @Html.ActionLink("Edit", "Edit", new { id = listItem.ProductId })
+            </div> |
+            <div class="btn btn-danger" id="Delete">
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.ProductId })
+            </div>
+        </li>
+          
+
         }
     </ul>
+
     <p>@Html.ActionLink("Add new item", "Create")</p>
 </body>
 </html>

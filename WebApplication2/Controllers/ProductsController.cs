@@ -11,7 +11,7 @@ namespace GummyBear.Controllers
 {
     public class ProductsController : Controller
     {
-        private GummyBearContext db = new GummyBearContext();
+        private GummyBearDbContext db = new GummyBearDbContext();
         public IActionResult Index()
         {
             return View(db.Products.ToList());

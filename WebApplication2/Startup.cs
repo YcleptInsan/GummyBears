@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using GummyBear.Models; 
 
 namespace WebApplication2
 {
@@ -26,7 +29,12 @@ namespace WebApplication2
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            {
+                services.AddEntityFramework()
+                    .AddDbContext<GummyBearDbContext>(options =>
+                        options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            }
+
             services.AddMvc();
         }
 
@@ -53,6 +61,7 @@ namespace WebApplication2
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            
         }
     }
 }
