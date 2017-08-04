@@ -1,0 +1,19 @@
+﻿@model IEnumerable<GummyBear.Models.Product>
+
+<html>
+<head>
+    <title>Gumnmy Bear Mania</title>
+</head>
+<body>
+    <h2>To Do List</h2>
+    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <ul>
+        @foreach (var listItem in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => listItem.Name)</li>
+            <li>@Html.DisplayFor(modelItem => listItem.Cost)</li>
+            <li>@Html.DisplayFor(modelItem => listItem.Country)</li>
+        }
+    </ul>
+</body>
+</html>
