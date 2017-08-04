@@ -1,4 +1,8 @@
-﻿@model GummyBear.Models.Product
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model GummyBear.Models.Product
 
 <html>
 <head>
@@ -7,6 +11,7 @@
 <body>
     <h2>Details</h2>
     <hr />
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
     @Html.DisplayNameFor(model => model.Cost): @Html.DisplayFor(model => model.Cost)
     @Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)
     <p>@Html.ActionLink("Back to list", "Index")</p>

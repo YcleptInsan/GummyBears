@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GummyBear.Models;
 
 namespace WebApplication2.Controllers
 {
@@ -26,6 +27,14 @@ namespace WebApplication2.Controllers
 
             return View();
         }
+
+        public IActionResult Product()
+        {
+            ViewData["Message"] = "Product List";
+
+            return View("~/Views/Index.cshtml");
+        }
+
 
         public IActionResult Error()
         {
