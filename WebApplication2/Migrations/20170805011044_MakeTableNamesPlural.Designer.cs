@@ -8,8 +8,8 @@ using GummyBear.Models;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(GummyBearDbContext))]
-    [Migration("20170804233039_Initial")]
-    partial class Initial
+    [Migration("20170805011044_MakeTableNamesPlural")]
+    partial class MakeTableNamesPlural
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,20 +28,9 @@ namespace WebApplication2.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("ProductId1");
-
                     b.HasKey("ProductId");
 
-                    b.HasIndex("ProductId1");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("GummyBear.Models.Product", b =>
-                {
-                    b.HasOne("GummyBear.Models.Product")
-                        .WithMany("Produccts")
-                        .HasForeignKey("ProductId1");
                 });
         }
     }

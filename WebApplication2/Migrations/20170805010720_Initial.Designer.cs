@@ -8,9 +8,10 @@ using GummyBear.Models;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(GummyBearDbContext))]
-    partial class GummyBearDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170805010720_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
